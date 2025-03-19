@@ -101,15 +101,15 @@ public class Product implements Serializable {
 		return items;
 	}
 
+	public List<Order> getOrders() {
+		return items.stream().map(x -> x.getOrder()).toList();
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
 	
-	public List<Order> getOrders() {
-		return items.stream().map(x -> x.getOrder()).toList();
-	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
